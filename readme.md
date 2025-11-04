@@ -248,8 +248,6 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 </p>
 <hr>
 
----
-
 ## Strategic Takeaways:
 
 | **Theme** | **Insight** | **Implication** |
@@ -277,6 +275,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 - Add predictive modeling for customer churn.
  
 ---
+
 
 
 
