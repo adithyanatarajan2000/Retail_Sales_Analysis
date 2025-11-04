@@ -50,16 +50,22 @@ The dashboard is designed to answer critical business questions and visualize th
 
 A crucial step in the data preparation involved handling missing customer IDs. This was addressed using a custom **Python script integrated with Power Query**:
 
-* **Goal:** Impute missing `CustomerNo` values specifically within the **'United Kingdom'** (the only country with nulls).
-* **Method:** The null `CustomerNo` values were imputed by randomly assigning them a `CustomerNo` from the **top 15 most frequent customers in the UK** (by transaction count), ensuring the integrity of the transaction data was preserved.
+* Goal: Impute missing CustomerNo values specifically within the **'United Kingdom'** (UK is the only country with nulls).
+* Method: The null CustomerNo values were imputed by randomly assigning them a CustomerNo from the **Top 15 most frequent customers in the UK** (By Transaction Counts), ensuring the integrity of the transaction data was preserved.
+* Justification: This method is preferred to the traditional mode imputation to avoid creating bias in the data set.
 
 ```python code:
 # Custom Python code for imputing null CustomerNo (integrated via Power Query)
+# 'dataset' holds the input data for this script
+dataset.drop_duplicates(inplace = True, ignore_index = True)
+# Finding out all the transaction nos will null customers
+null_transactions = dataset[dataset.isna().any(axis = 1)]['TransactionNo'].unique()
+# UK is the only country with null customer values
 subset = dataset[(dataset['Country'].str.lower() == "united kingdom") & (dataset['CustomerNo'].notna())]
 top_customers = subset.groupby('CustomerNo')['TransactionNo'].nunique().nlargest(15).index
-# ... mapping and assignment logic followed (as provided in the input)
+trans_cust_mapping = pd.Series(np.random.choice(top_customers, size = len(null_transactions)), index = null_transactions).to_dict()
+dataset.loc[dataset['CustomerNo'].isna(), 'CustomerNo'] = dataset.loc[dataset['CustomerNo'].isna(), 'TransactionNo'].map(trans_cust_mapping)
 ````
-
 -----
 
 ## Data Modeling:
@@ -104,6 +110,7 @@ Customer segmentation was performed using a **Python script integrated into Powe
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
+
 
 
 
