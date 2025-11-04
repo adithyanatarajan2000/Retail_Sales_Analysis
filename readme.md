@@ -166,13 +166,13 @@ seg_cond = [
 (df['Recency Score'] == 5) & (df['Frequency_Monetary_Score'].between(2, 5))
 ]
 
-seg_choice = ["Champions", "Loyal Customers", "New Comers", "Premium Customers at Risk", \
-"Moderate Value Customers", "Low Engagement Customers", "Dormant Customers"]
+seg_choice = ["Champions", "Loyal Customers", "New Comers", "Premium Customers at Risk", "Moderate Value Customers", "Low Engagement Customers", "Dormant Customers"]
 
 
 df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ```
+
 
 
 
