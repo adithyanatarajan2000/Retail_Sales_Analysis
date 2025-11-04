@@ -97,11 +97,11 @@ The original flat sales table was transformed into a **Star Schema** model to op
 
 | **No** | **Page** | **Key Metrics / Features** | **Strategic Takeaways** |
 |-----------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Summary & KPIs | - Total Revenue: **£60.12M**  <br> - Unique Customers: **4,738** <br> - Busiest Day: **Sunday**  <br> - Top 5 Products: Assorted Colour Bird Ornament, Jumbo Bag Red Retrospot, Pack Of 72 Retrospot Cake Cases, Popcorn Holder, World War 2 Gliders Asstd Designs  <br> - Top 5 Countries: UK, Netherlands, EIRE, Germany, France  <br>|- Revenue peaks in **November 2019**  <br> - UK dominates the revenue share.  <br> - Sunday is the busiest day, indicating strong weekend engagement. Target promotions during weekends and avoid Tuesdays. |
-| 2 | Customer RFM & Retention Analysis | - Champions Revenue: £15.93M  <br> - Segment Counts: Champions (90), Loyal (1625), Lost (348), Low Engagement(797), Dormant(1), Moderate Value (134), New Comers (1743)  <br> - Monthly Customer Retention peaks in November 2019 | - Champions approximately contribute to **25%** of total revenue  <br> - Retention rate improves steadily across the Q2 and Q3 of 2019 |
-| 3 | Product & Transaction Analysis | - Total Revenue: **£60.12M**  <br> - Cancelled Revenue: **£2.66M**  <br> - Total Transactions: **23K** | - Cancelled orders represent **~14%** of the total number of orders - a major operational risk |
-| 4 | RFM Details Drill-Through | <br> - Metrics: Days Since Last Purchase, Purchase Count, Revenue  <br> - Recommendations: ❌ Drop, ⚠️ Engage, ✅ Retain & Grow <br> - Drill-through enables granular customer-level action planning by Country | - Most low-engagement/lost customers show long inactivity and low revenue. Target New Comers, Loyal Customers with better incentives as they constitue around **71%** of the customer base |
-| 5 | Moving Average Analysis | <br> - Adjustable N-day smoothing (1 – 10 days)  <br> - Line charts for trend visualization of Revenue and Qty Sold <br> - Moving average helps smooth seasonal spikes and identify true growth | <br> - June 2019 shows the highest consistency for sales and revenue |
+| 1 | Summary & KPIs | - Total Revenue: **£60.12M**  <br> - Unique Customers: **4,738** <br> - Busiest Day: **Sunday**  <br> - Top 5 Products: Assorted Colour Bird Ornament, Jumbo Bag Red Retrospot, Pack Of 72 Retrospot Cake Cases, Popcorn Holder, World War 2 Gliders Asstd Designs  <br> - Top 5 Countries: UK, Netherlands, EIRE, Germany, France  <br>|- Revenue peaks in **November 2019**.  <br> - UK dominates the revenue share.  <br> - Sunday is the busiest day, indicating strong weekend engagement. Target promotions during weekends and avoid Tuesdays. |
+| 2 | Customer RFM & Retention Analysis | - Champions Revenue: £15.93M  <br> - Segment Counts: Champions (90), Loyal (1625), Lost (348), Low Engagement(797), Dormant(1), Moderate Value (134), New Comers (1743)  <br> - Monthly Customer Retention peaks in November 2019. | - Champions approximately contribute to **25%** of total revenue.  <br> - Retention rate improves steadily across the Q2 and Q3 of 2019. |
+| 3 | Product & Transaction Analysis | - Total Revenue: **£60.12M**  <br> - Cancelled Revenue: **£2.66M**  <br> - Total Transactions: **23K** | - Cancelled orders represent **~14%** of the total number of orders - a major operational risk. |
+| 4 | RFM Details Drill-Through | <br> - Metrics: Days Since Last Purchase, Purchase Count, Revenue  <br> - Recommendations: ❌ Drop, ⚠️ Engage, ✅ Retain & Grow <br> - Drill-through enables granular customer-level action planning by Country. | - Most low-engagement/lost customers show long inactivity and low revenue. Target New Comers, Loyal Customers with better incentives as they constitue around **71%** of the customer base. |
+| 5 | Moving Average Analysis | <br> - Adjustable N-day smoothing (1 – 10 days)  <br> - Line charts for trend visualization of Revenue and Qty Sold. <br> - Moving average helps smooth seasonal spikes and identify true growth. | <br> - June 2019 shows the highest consistency for sales and revenue. |
 
 ---
 
@@ -260,12 +260,12 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 | **Theme** | **Insight** | **Implication** |
 |-----------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Revenue Growth | Consistent MoM revenue increase, peaking in November 2019 | Strong seasonal demand which ideal for year-end promotions and inventory planning |
-| Customer Segmentation | Champions approximately contribute to **25%** of total revenue | Prioritize retention campaigns for high-value customers and target new comers and loyal customers |
-| Retention Trends | MoM Customer Retention Rate dipped by **40%** from November to December 2019 | Actively start Loyalty programs and engagement customer strategies |
-| Cancellation Risk | Cancelled orders represent **~14%** of the total orders | Urgent need for inventory optimization and fulfillment reliability |
-| Transaction Behavior | **Sunday** is the busiest while **Wednesday** shows the lowest transactions with none on **Tuesday** | Optimize staffing and promotions around weekend peaks |
-| Forecasting & Trend Smoothing | Moving average analysis reveals stable growth patterns across revenue and quantity sold | Enables better forecasting and campaign timing decisions |
+| Revenue Growth | Consistent MoM revenue increase, peaking in November 2019. | Strong seasonal demand which ideal for year-end promotions and inventory planning. |
+| Customer Segmentation | Champions approximately contribute to **25%** of total revenue. | Prioritize retention campaigns for high-value customers and target new comers and loyal customers. |
+| Retention Trends | MoM Customer Retention Rate dipped by **40%** from November to December 2019. | Actively start Loyalty programs and engagement customer strategies. |
+| Cancellation Risk | Cancelled orders represent **~14%** of the total orders. | Urgent need for inventory optimization and fulfillment reliability. |
+| Transaction Behavior | **Sunday** is the busiest while **Wednesday** shows the lowest transactions with none on **Tuesday**. | Optimize staffing and promotions around weekend peaks. |
+| Forecasting & Trend Smoothing | Moving average analysis reveals stable growth patterns across revenue and quantity sold. | Enables better forecasting and campaign timing decisions. |
 
 ---
 
@@ -275,3 +275,4 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 - Add predictive modeling for customer churn.
  
 ---
+
