@@ -72,7 +72,15 @@ top_customers = subset.groupby('CustomerNo')['TransactionNo'].nunique().nlargest
 trans_cust_mapping = pd.Series(np.random.choice(top_customers, size = len(null_transactions)), index = null_transactions).to_dict()
 dataset.loc[dataset['CustomerNo'].isna(), 'CustomerNo'] = dataset.loc[dataset['CustomerNo'].isna(), 'TransactionNo'].map(trans_cust_mapping)
 ````
------
+----
+
+## Feature Engineering:
+
+- Created **Revenue** column as **Quantity × Price**
+- Derived **Days_Since_Last_Purchase** for Recency scoring
+- Built RFM scores using quantile-based binning
+
+---
 
 ## Data Modeling:
 
@@ -232,9 +240,11 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ---
 
+## Tools Used: 
 
+`Power BI`, `Python`
 
-
+---
 
 
 
