@@ -6,6 +6,12 @@ This project presents a **comprehensive Power BI report** built to analyze a UK 
 
 ---
 
+## Power BI Report Link:
+
+https://app.powerbi.com/view?r=eyJrIjoiYmM1YjEwZDgtNmZmMi00MTgxLThmMTEtZTQ3NDc0NjQzOWZjIiwidCI6ImEwZTViOGNhLTBhZmQtNGM3Ni1iODJjLTc1MjEyYjA1NmU2ZiJ9
+
+---
+
 ## Business Questions & Key Insights:
 
 The dashboard is designed to answer critical business questions and visualize the following:
@@ -25,7 +31,7 @@ The dashboard is designed to answer critical business questions and visualize th
 ## Data Source:
 
 * Source: [Kaggle UK Online and Retail Sales Dataset](https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business)
-* Size: 5,36,350 rows and 8 columns
+* Size: 536,350 rows and 8 columns
 
 ### Features:
 
@@ -225,6 +231,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 <hr>
 
 ---
+
 
 
 
