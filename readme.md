@@ -179,12 +179,14 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 ---
 ## Report Pages:
 
-<p align="center"><b>Summary & KPIs Page</b></p>
-![Data Model](Key Visuals/Data Model.jpg)
+<h3 align="center"><strong>Data Model</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Data Model.jpg" alt="Data Model">
+</p>
+<hr>
 
 ---
-
-
 
 
 
