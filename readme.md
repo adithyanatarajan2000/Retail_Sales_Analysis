@@ -103,18 +103,3 @@ Customer segmentation was performed using a sophisticated **Python script integr
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
-
------
-
-## 🤝 Contribution
-
-Feel free to **fork** this repository, **submit pull requests**, or **open issues** for any suggestions or bug reports.
-
-## 📄 License
-
-*Please specify your license here (e.g., MIT, Apache 2.0, or leave as 'Unspecified' if not yet determined).*
-
-```
-
-I've ensured all the key details are included. Let me know if you would like me to draft a quick **Installation/Usage** section for your Power BI file or add an image placeholder.
-```
