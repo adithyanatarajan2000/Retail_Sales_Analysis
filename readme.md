@@ -29,16 +29,16 @@ The dashboard is designed to answer critical business questions and visualize th
 
 ### Features:
 
-| Column Name | Type | Description |
-| :--- | :--- | :--- |
-| `TransactionNo` | Categorical | Six-digit unique transaction number. **'C' indicates a cancellation.** |
-| `Date` | Numeric | Date of the transaction. |
-| `ProductNo` | Categorical | Unique identifier for a product. |
-| `Product` | Categorical | Product/item name. |
-| `Price` | Numeric | Unit price in **Pound Sterling (£)**. |
-| `Quantity` | Numeric | Quantity of product per transaction. **Negative values indicate cancellations.** |
-| `CustomerNo` | Categorical | Unique customer identifier. |
-| `Country` | Categorical | Country where the customer resides.
+| Feature Name | Description |
+| :--- | :--- |
+| TransactionNo | Six-digit unique transaction number. C indicates a cancellation. |
+| Date | Date of the transaction. |
+| ProductNo | Unique identifier for a Product. |
+| Product | Product Name. |
+| Price | Unit price in Pounds (£). |
+| Quantity | Quantity of product per transaction. |
+| CustomerNo | Unique customer Identifier. |
+| Country | Country where the Customer Resides.
 
 > **Note on Cancellations:** A small percentage of cancellations is present, often due to out-of-stock conditions where customers prefer to cancel the entire order rather than receive a partial delivery.
 
@@ -104,6 +104,7 @@ Customer segmentation was performed using a **Python script integrated into Powe
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
+
 
 
 
