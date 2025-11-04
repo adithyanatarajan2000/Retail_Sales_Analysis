@@ -21,7 +21,7 @@ The dashboard is designed to answer critical business questions and visualize th
 * **Top 5 Products:** Identification of the top-performing products based on **Quantity Sold**.
 * **Unique Customers:** The total count of distinct customers who made a purchase.
 * **Monthly Sales Trend & MoM Growth:** Analysis of monthly revenue movement and the calculation of Month-over-Month (MoM) growth percentage.
-* **Cancelled Orders Analysis:** Total revenue and the percentage of total transactions represented by 'Cancelled' orders (indicated by 'C' in `TransactionNo`).
+* **Cancelled Orders Analysis:** Total revenue and the percentage of total transactions of Cancelled orders (Cancelled Orders start with a 'C' in TransactionNo column).
 * **Busiest Day of the Week:** Determination of the day with the highest **volume of unique transactions**.
 * **RFM Segmentation:** Classification of customers based on Recency, Frequency, and Monetary scores, highlighting the **Total Revenue contributed by the 'Champions' segment** (highest RFM scores).
 * **Month Over Month Customer Retention Rate:** Tracking customer loyalty over time.
@@ -277,6 +277,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 - Add predictive modeling for customer churn.
  
 ---
+
 
 
 
