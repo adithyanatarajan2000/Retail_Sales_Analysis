@@ -95,44 +95,44 @@ The original flat sales table was transformed into a **Star Schema** model to op
 
 ## Dashboard Summary Table:
 
-| Page | Focus Area                         | Key Metrics / Features                                                                                                                                       | Strategic Takeaways                                                                                                                                     |
-|------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | Summary & KPIs                     | - Total Revenue: £60.12M  
-- Unique Customers: 4,738  
-- MoM Revenue Growth: 14.71%  
-- Busiest Day: Sunday  
-- Top 5 Products: Desk, Chair, Paper, Phone, Windows 7  
-- Top 5 Countries: USA, UK, France, Germany, Italy  
-- Monthly Revenue & MoM % Trend | - Revenue shows consistent monthly growth, peaking in December  
-- USA and UK dominate revenue share  
-- Sunday is the busiest day, indicating strong weekend engagement  
+| Page | Focus Area                        | Key Metrics / Features                                                                                                                                                                                                                          | Strategic Takeaways                                                                                                                                                                                                                                   |
+| ---- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | Summary & KPIs                    | - Total Revenue: £60.12M
+- Unique Customers: 4,738
+- MoM Revenue Growth: 14.71%
+- Busiest Day: Sunday
+- Top 5 Products: Desk, Chair, Paper, Phone, Windows 7
+- Top 5 Countries: USA, UK, France, Germany, Italy
+- Monthly Revenue & MoM % Trend | - Revenue shows consistent monthly growth, peaking in December
+- USA and UK dominate revenue share
+- Sunday is the busiest day, indicating strong weekend engagement
 - Top 5 products account for significant volume — potential bundling opportunity |
-| 2    | Customer RFM & Retention Analysis | - Total Revenue: £60.12M  
-- Champions Revenue: £15.93M  
-- Segment Counts: Champions (1,048), Loyal (1,026), Lost (1,024), etc.  
-- Monthly Retention: 327 → 1,048  
-- MoM CRR %: 31% → 100% | - Champions segment contributes over 25% of total revenue  
-- Retention rate improves steadily across the year  
-- Balanced distribution across segments enables targeted engagement strategies |
-| 3    | Product & Transaction Analysis     | - Total Revenue: £6.01M  
-- Cancelled Revenue: £2.66M  
-- Total Transactions: 23K  
-- Top Products by Revenue: Travel Card Wallet, Jumbo Bags, Christmas Kits  
-- Cancelled Transactions Trend  
-- Transactions by Day of Week | - Cancelled orders represent ~44% of revenue — a major operational risk  
-- Friday is the busiest day; Saturday shows lowest activity  
-- High-performing products are seasonal and gift-oriented — ideal for campaign targeting |
-| 4    | RFM Details Drill-Through         | - Segment: Low Engagement Customers  
-- Metrics: Days Since Last Purchase, Purchase Count, Revenue  
-- Recommendations: ❌ Drop, ⚠️ Engage, ✅ Retain & Grow | - Most low-engagement customers show long inactivity and low revenue  
-- Visual recommendation icons guide retention strategy  
-- Drill-through enables granular customer-level action planning |
-| 5    | Moving Average Analysis            | - 1-Day Moving Avg for Revenue & Quantity Sold  
-- Values: £1.26M revenue, 29.6K units sold  
-- Adjustable N-day smoothing (1–10 days)  
-- Line charts for trend visualization | - Moving average helps smooth seasonal spikes and identify true growth  
-- Useful for forecasting and campaign timing  
-- Drill-through from KPIs enables deeper trend analysis |
+| 2    | Customer RFM & Retention Analysis | - Total Revenue: £60.12M
+- Champions Revenue: £15.93M
+- Segment Counts: Champions (1,048), Loyal (1,026), Lost (1,024), etc.
+- Monthly Retention: 327 → 1,048
+- MoM CRR %: 31% → 100%                                                           | - Champions segment contributes over 25% of total revenue
+- Retention rate improves steadily across the year
+- Balanced distribution across segments enables targeted engagement strategies                                                           |
+| 3    | Product & Transaction Analysis    | - Total Revenue: £6.01M
+- Cancelled Revenue: £2.66M
+- Total Transactions: 23K
+- Top Products by Revenue: Travel Card Wallet, Jumbo Bags, Christmas Kits
+- Cancelled Transactions Trend
+- Transactions by Day of Week                            | - Cancelled orders represent ~44% of revenue — a major operational risk
+- Friday is the busiest day; Saturday shows lowest activity
+- High-performing products are seasonal and gift-oriented — ideal for campaign targeting                          |
+| 4    | RFM Details Drill-Through         | - Segment: Low Engagement Customers
+- Metrics: Days Since Last Purchase, Purchase Count, Revenue
+- Recommendations: ❌ Drop, ⚠️ Engage, ✅ Retain & Grow                                                                                          | - Most low-engagement customers show long inactivity and low revenue
+- Visual recommendation icons guide retention strategy
+- Drill-through enables granular customer-level action planning                                                           |
+| 5    | Moving Average Analysis           | - 1-Day Moving Avg for Revenue & Quantity Sold
+- Values: £1.26M revenue, 29.6K units sold
+- Adjustable N-day smoothing (1–10 days)
+- Line charts for trend visualization                                                                        | - Moving average helps smooth seasonal spikes and identify true growth
+- Useful for forecasting and campaign timing
+- Drill-through from KPIs enables deeper trend analysis                                                                           |
 ---
 
 ## Key Features of the Dashboard:
@@ -292,6 +292,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 - Add predictive modeling for customer churn.
  
 ---
+
 
 
 
