@@ -24,8 +24,8 @@ The dashboard is designed to answer critical business questions and visualize th
 
 ## Data Source:
 
-Source: [Kaggle UK Online and Retail Sales Dataset](https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business)
-Size: 5,36,350 rows and 8 columns
+* Source: [Kaggle UK Online and Retail Sales Dataset](https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business)
+* Size: 5,36,350 rows and 8 columns
 
 ### Features:
 
@@ -104,5 +104,6 @@ Customer segmentation was performed using a **Python script integrated into Powe
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
+
 
 
