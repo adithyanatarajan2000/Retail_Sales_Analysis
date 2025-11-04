@@ -176,6 +176,13 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 ```
 
 
+---
+## Report Pages:
+
+<p align="center"><b>Summary & KPIs Page</b></p>
+![Data Model](Key Visuals/Data Model.jpg)
+
+---
 
 
 
