@@ -250,12 +250,6 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ---
 
-## Tools Used: 
-
-`Power BI`, `Python`
-
----
-
 ## Strategic Takeaways:
 
 | **Theme** | **Insight** | **Implication** |
@@ -269,12 +263,21 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ---
 
+
+## Tools Used: 
+
+- **Power BI** : `Power Query` and `DAX`
+- **Python** : `Pandas` and `Numpy`
+
+---
+
 ## Next Steps:
 
 - Deploy a report to Power BI Service with scheduled refresh to automatically fetch the latest data snapshot.
 - Add predictive modeling for customer churn.
  
 ---
+
 
 
 
