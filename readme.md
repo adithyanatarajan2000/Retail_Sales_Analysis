@@ -2,7 +2,7 @@
 
 ## Project Overview:
 
-This project presents a **comprehensive Power BI report** built to analyze a UK online and retail sales dataset. The analysis provides key performance indicators (KPIs) and actionable insights across revenue, customer behavior (including **RFM segmentation**), product performance, and sales trends to drive strategic business decisions.
+This project analyzes 500K+ UK retail transactions using **Power BI and Python**. The analysis provides key performance indicators (KPIs) and actionable insights across revenue, customer behavior (including **RFM segmentation**), product performance, and sales trends to drive strategic business decisions using drill-throughs and dynamic visuals.
 
 ---
 
@@ -252,7 +252,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 | **Theme** | **Insight** | **Implication** |
 |-----------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Revenue Growth | Consistent MoM revenue increase, peaking in November 2019. | Strong seasonal demand which ideal for year-end promotions and inventory planning. |
+| Revenue Growth | Consistent MoM revenue increase, peaking in November 2019. | Strong seasonal demand which is ideal for year-end promotions and inventory planning. |
 | Customer Segmentation | Champions approximately contribute to **25%** of total revenue. | Prioritize retention campaigns for high-value customers and target new comers and loyal customers. |
 | Retention Trends | MoM Customer Retention Rate dipped by **40%** from November to December 2019. | Actively start Loyalty programs and engagement customer strategies. |
 | Cancellation Risk | Cancelled orders represent **~14%** of the total orders. | Urgent need for inventory optimization and fulfillment reliability. |
@@ -275,6 +275,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 - Add predictive modeling for customer churn.
  
 ---
+
 
 
 
