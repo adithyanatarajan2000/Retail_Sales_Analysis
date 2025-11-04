@@ -22,11 +22,11 @@ The dashboard is designed to answer critical business questions and visualize th
 
 ---
 
-## 📊 Data Source
+## Data Source:
 
 The analysis is based on the **UK Online and Retail Sales Dataset**, which comprises **536,350 rows** and **8 columns**.
 
-### Dataset Columns:
+### Features:
 
 | Column Name | Type | Description |
 | :--- | :--- | :--- |
@@ -43,16 +43,16 @@ The analysis is based on the **UK Online and Retail Sales Dataset**, which compr
 
 ---
 
-## 🛠️ Data Cleaning & Preparation
+## Data Cleaning & Preparation:
 
-### 🐍 Custom Python/Power Query Implementation
+### Python/Power Query Implementation:
 
 A crucial step in the data preparation involved handling missing customer IDs. This was addressed using a custom **Python script integrated with Power Query**:
 
 * **Goal:** Impute missing `CustomerNo` values specifically within the **'United Kingdom'** (the only country with nulls).
 * **Method:** The null `CustomerNo` values were imputed by randomly assigning them a `CustomerNo` from the **top 15 most frequent customers in the UK** (by transaction count), ensuring the integrity of the transaction data was preserved.
 
-```python
+```python code:
 # Custom Python code for imputing null CustomerNo (integrated via Power Query)
 subset = dataset[(dataset['Country'].str.lower() == "united kingdom") & (dataset['CustomerNo'].notna())]
 top_customers = subset.groupby('CustomerNo')['TransactionNo'].nunique().nlargest(15).index
@@ -61,7 +61,7 @@ top_customers = subset.groupby('CustomerNo')['TransactionNo'].nunique().nlargest
 
 -----
 
-## 📐 Data Modeling
+## Data Modeling:
 
 The original flat sales table was transformed into a **Star Schema** model to optimize performance and analysis within Power BI:
 
@@ -72,34 +72,35 @@ The original flat sales table was transformed into a **Star Schema** model to op
 
 -----
 
-## ⭐ Key Features of the Dashboard
+## Key Features of the Dashboard:
 
-### 1\. Advanced Drill-Through Functionality
+### 1\. Advanced Drill-Through Functionality:
 
 The dashboard employs drill-throughs to facilitate deeper analysis:
 
   * **KPIs to Moving Average Analysis:**
       * **Source:** Summary and KPIs Page (Total Revenue, MoM Revenue %).
-      * **Target:** **Moving Avg Analysis** Page, which dynamically calculates the **N-day Moving Average for Revenue and Quantity Sold**. The 'N' value is adjustable via a slicer (1 to 10).
+      * **Target:** **Moving Avg Analysis** Page, which dynamically calculates the **N-day Moving Average for Revenue and Quantity Sold**. The 'N' value is adjustable via a slicer (1 to 10) for a specific month.
   * **Customer Segmentation to RFM Details:**
       * **Source:** Customer Analysis Page (Matrix of Customer Segment and Count).
       * **Target:** **RFM Details** Page, showing the individual customer records, scores, and RFM attributes for the selected segment.
 
 ### 2\. RFM (Recency, Frequency, Monetary) Segmentation
 
-Customer segmentation was performed using a sophisticated **Python script integrated into Power Query** for custom scoring based on quantiles:
+Customer segmentation was performed using a **Python script integrated into Power Query** for custom scoring based on quantiles:
 
   * **Scoring Logic:** Recency, Frequency, and Monetary scores are assigned based on custom quantile thresholds (20th, 40th, 60th, 80th percentiles).
       * **Recency:** Scored **inversely** (lower days since last purchase = higher score).
       * **Frequency & Monetary:** Scored **directly** (higher value = higher score).
   * **Segmentation:** A combined **Frequency\_Monetary\_Score** and the **Recency Score** are used to assign customers to one of the following segments:
-      * `Champions`, `Loyal Customers`, `New Comers`, `Premium Customers at Risk`, `Moderate Value Customers`, `Low Engagement Customers`, `Dormant Customers`, and `Lost Customers`.
+      * Champions, Loyal Customers, New Comers, Premium Customers at Risk, Moderate Value Customers, Low Engagement Customers, Dormant Customers, and Lost Customers.
 
 <!-- end list -->
 
-```python
+```python code:
 # Custom Python code for RFM Segmentation (integrated via Power Query)
 # ... calculates Revenue, Days_Since_Last_Purchase
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
+
