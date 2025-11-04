@@ -31,7 +31,7 @@ The dashboard is designed to answer critical business questions and visualize th
 
 | Feature Name | Description |
 | :--- | :--- |
-| TransactionNo | Six-digit unique transaction number. C indicates a cancellation. |
+| TransactionNo | Six-digit unique transaction number. Transaction Nos starting with a **C** indicate a cancellation. |
 | Date | Date of the transaction. |
 | ProductNo | Unique identifier for a Product. |
 | Product | Product Name. |
@@ -40,7 +40,7 @@ The dashboard is designed to answer critical business questions and visualize th
 | CustomerNo | Unique customer Identifier. |
 | Country | Country where the Customer Resides.
 
-> **Note on Cancellations:** A small percentage of cancellations is present, often due to out-of-stock conditions where customers prefer to cancel the entire order rather than receive a partial delivery.
+**Note on Cancellations:** A small percentage of cancellations is present, often due to out-of-stock conditions where customers prefer to cancel the entire order rather than receive a partial delivery.
 
 ---
 
@@ -92,7 +92,7 @@ The dashboard employs drill-throughs to facilitate deeper analysis:
       * **Source:** Customer Analysis Page (Matrix of Customer Segment and Count).
       * **Target:** **RFM Details** Page, showing the individual customer records, scores, and RFM attributes for the selected segment.
 
-### 2\. RFM (Recency, Frequency, Monetary) Segmentation:
+### 2\. Customer Segmentation based on RFM (Recency, Frequency, Monetary) Scores:
 
 Customer segmentation was performed using a **Python script integrated into Power Query** for custom scoring based on quantiles:
 
@@ -225,6 +225,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 <hr>
 
 ---
+
 
 
 
