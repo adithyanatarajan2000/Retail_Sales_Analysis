@@ -52,7 +52,7 @@ A crucial step in the data preparation involved handling missing customer IDs. T
 
 * Goal: Impute missing CustomerNo values specifically within the **'United Kingdom'** (UK is the only country with nulls).
 * Method: The null CustomerNo values were imputed by randomly assigning them a CustomerNo from the **Top 15 most frequent customers in the UK** (By Transaction Counts), ensuring the integrity of the transaction data was preserved.
-* Justification: This method is preferred to the traditional mode imputation to avoid creating bias in the data set.
+* Justification: This method is preferred to the traditional mode imputation to avoid creating bias in the data set. This solution still maintains some degree of randomness by selecting 1 customer randomly from the top 15 customers using simple random sampling.
 
 ```python code:
 # Custom Python code for imputing null CustomerNo (integrated via Power Query)
@@ -110,6 +110,7 @@ Customer segmentation was performed using a **Python script integrated into Powe
 # ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
 # ... assigns final customer segments based on combined scores
 ```
+
 
 
 
