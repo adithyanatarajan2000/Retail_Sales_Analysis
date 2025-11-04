@@ -106,10 +106,74 @@ Customer segmentation was performed using a **Python script integrated into Powe
 
 ```python code:
 # Custom Python code for RFM Segmentation (integrated via Power Query)
-# ... calculates Revenue, Days_Since_Last_Purchase
-# ... applies rank-based scoring using custom quantiles (0.2, 0.4, 0.6, 0.8)
-# ... assigns final customer segments based on combined scores
+
+# 'dataset' holds the input data for this script
+
+dataset['Revenue'] = dataset['Quantity'] * dataset['Price']
+dataset['Date'] = pd.to_datetime(dataset['Date'])
+df = dataset.groupby(['CustomerNo', 'Country'])[['TransactionNo', 'Revenue', 'Date']].agg({'TransactionNo': 'nunique', 
+'Revenue': 'sum', 'Date': 'max'}).reset_index().rename(columns = {'TransactionNo': 'Total_Purchases'})
+df['Days_Since_Last_Purchase'] = (dataset['Date'].max() - df['Date']).dt.days
+df.drop(['Date'], axis = 1, inplace = True)
+q1, q2, q3, q4 = 0.2, 0.4, 0.6, 0.8
+
+# Frequency Scores
+freq_cond = [
+    df.Total_Purchases.rank(method = 'dense', pct = True) <= q1,
+    df.Total_Purchases.rank(method = 'dense', pct = True) <= q2,
+    df.Total_Purchases.rank(method = 'dense', pct = True) <= q3,
+    df.Total_Purchases.rank(method = 'dense', pct = True) <= q4
+    ]
+freq_choice = [5, 4, 3, 2]
+df['Frequency Score'] = np.select(freq_cond, freq_choice, 1)
+
+
+# Monetary Scores
+rev_cond = [
+    df.Revenue.rank(method = 'dense', pct = True) <= q1,
+    df.Revenue.rank(method = 'dense', pct = True) <= q2,
+    df.Revenue.rank(method = 'dense', pct = True) <= q3,
+    df.Revenue.rank(method = 'dense', pct = True) <= q4
+    ]
+rev_choice = [5, 4, 3, 2]
+df['Monetary Score'] = np.select(rev_cond, rev_choice, 1)
+
+# Recency Scores
+rec_cond = [
+    df.Days_Since_Last_Purchase.rank(method = 'dense', pct = True) <= q1,
+    df.Days_Since_Last_Purchase.rank(method = 'dense', pct = True) <= q2,
+    df.Days_Since_Last_Purchase.rank(method = 'dense', pct = True) <= q3,
+    df.Days_Since_Last_Purchase.rank(method = 'dense', pct = True) <= q4
+    ]
+rec_choice = [1, 2, 3, 4]
+df['Recency Score'] = np.select(rec_cond, rec_choice, 5)
+
+
+# FM Score Combined
+
+df['Frequency_Monetary_Score'] = df['Frequency Score'] + df['Monetary Score']
+
+
+# Customer Segmentation
+
+seg_cond = [
+(df['Recency Score'].between(1, 2)) & (df['Frequency_Monetary_Score'].between(2, 4)),
+(df['Recency Score'].between(1, 2)) & (df['Frequency_Monetary_Score'].between(5, 7)),
+(df['Recency Score'].between(1, 2)) & (df['Frequency_Monetary_Score'].between(8, 10)),
+(df['Recency Score'].between(3, 4)) & (df['Frequency_Monetary_Score'].between(2, 4)),
+(df['Recency Score'].between(3, 4)) & (df['Frequency_Monetary_Score'].between(5, 7)),
+(df['Recency Score'].between(3, 4)) & (df['Frequency_Monetary_Score'].between(8, 10)),
+(df['Recency Score'] == 5) & (df['Frequency_Monetary_Score'].between(2, 5))
+]
+
+seg_choice = ["Champions", "Loyal Customers", "New Comers", "Premium Customers at Risk", \
+"Moderate Value Customers", "Low Engagement Customers", "Dormant Customers"]
+
+
+df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
+
 ```
+
 
 
 
