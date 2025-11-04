@@ -92,7 +92,7 @@ The dashboard employs drill-throughs to facilitate deeper analysis:
       * **Source:** Customer Analysis Page (Matrix of Customer Segment and Count).
       * **Target:** **RFM Details** Page, showing the individual customer records, scores, and RFM attributes for the selected segment.
 
-### 2\. RFM (Recency, Frequency, Monetary) Segmentation
+### 2\. RFM (Recency, Frequency, Monetary) Segmentation:
 
 Customer segmentation was performed using a **Python script integrated into Power Query** for custom scoring based on quantiles:
 
@@ -101,6 +101,8 @@ Customer segmentation was performed using a **Python script integrated into Powe
       * **Frequency & Monetary:** Scored **directly** (higher value = higher score).
   * **Segmentation:** A combined **Frequency\_Monetary\_Score** and the **Recency Score** are used to assign customers to one of the following segments:
       * Champions, Loyal Customers, New Comers, Premium Customers at Risk, Moderate Value Customers, Low Engagement Customers, Dormant Customers, and Lost Customers.
+   
+ Note: This scoring logic gives higher weights to **Recency Score** over **Monetary and Frequency Scores**.
 
 <!-- end list -->
 
@@ -172,6 +174,7 @@ seg_choice = ["Champions", "Loyal Customers", "New Comers", "Premium Customers a
 df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ```
+
 
 
 
