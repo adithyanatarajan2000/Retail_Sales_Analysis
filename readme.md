@@ -76,9 +76,9 @@ dataset.loc[dataset['CustomerNo'].isna(), 'CustomerNo'] = dataset.loc[dataset['C
 
 ## Feature Engineering:
 
-- Created **Revenue** column as **Quantity × Price**
-- Derived **Days_Since_Last_Purchase** for Recency scoring
-- Built RFM scores using quantile-based binning
+- Created **Revenue** column as **Quantity × Price**.
+- Derived **Days_Since_Last_Purchase** for Recency scoring.
+- Built RFM scores using quantile-based binning.
 
 ---
 
@@ -189,8 +189,6 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ```
 
-
----
 ---
 
 ## Key Visuals:
@@ -246,7 +244,12 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 ---
 
+## Next Steps:
 
+- Deploy dashboard to Power BI Service with scheduled refresh.
+- Add predictive modeling for customer churn.
+ 
+---
 
 
 
