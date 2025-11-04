@@ -2,7 +2,7 @@
 
 ## Project Overview:
 
-This project presents a **comprehensive Power BI dashboard** built to analyze a UK online and retail sales dataset. The analysis provides key performance indicators (KPIs) and actionable insights across revenue, customer behavior (including **RFM segmentation**), product performance, and sales trends to drive strategic business decisions.
+This project presents a **comprehensive Power BI report** built to analyze a UK online and retail sales dataset. The analysis provides key performance indicators (KPIs) and actionable insights across revenue, customer behavior (including **RFM segmentation**), product performance, and sales trends to drive strategic business decisions.
 
 ---
 
@@ -225,6 +225,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 <hr>
 
 ---
+
 
 
 
