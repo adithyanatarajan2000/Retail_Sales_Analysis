@@ -177,7 +177,9 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 
 
 ---
-## Report Pages:
+---
+
+## Key Visuals:
 
 <h3 align="center"><strong>Data Model</strong></h3>
 <br>
@@ -186,6 +188,45 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 </p>
 <hr>
 
+
+<h3 align="center"><strong>Summary and KPIs</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Page 1.jpg" alt="Summary and KPIs">
+</p>
+<hr>
+
+<h3 align="center"><strong>Customer Analysis</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Page 2.jpg" alt="Customer Analysis">
+</p>
+<hr>
+
+<h3 align="center"><strong>Operations</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Page 3.jpg" alt="Operations">
+</p>
+<hr>
+
+<h3 align="center"><strong>RFM Details</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Page 4.jpg" alt="RFM Details">
+</p>
+<hr>
+
+<h3 align="center"><strong>Moving Avg</strong></h3>
+<br>
+<p align="center">
+  <img src="Key Visuals/Page 5.jpg" alt="Moving Avg">
+</p>
+<hr>
+
+
+
+---
 ---
 
 
