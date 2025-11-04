@@ -52,7 +52,7 @@ A crucial step in the data preparation involved handling missing customer IDs. T
 
 * Goal: Impute missing CustomerNo values specifically within the **'United Kingdom'** (UK is the only country with nulls).
 * Method: The null CustomerNo values were imputed by randomly assigning them a CustomerNo from the **Top 15 most frequent customers in the UK** (By Transaction Counts), ensuring the integrity of the transaction data was preserved.
-* Justification: This method is preferred to the traditional mode imputation to avoid creating bias in the data set. This solution maintains some degree of randomness by selecting 1 customer randomly from the top 15 customers using simple random sampling.
+* Justification: This method is preferred to the traditional mode imputation to avoid creating bias in the data set. This solution maintains some degree of randomness by selecting 1 customer randomly from the top 15 most frequent customers with all the 15 customers having an equal probability of getting selected.
 
 ```python code:
 # Custom Python code for imputing null CustomerNo (integrated via Power Query)
@@ -225,6 +225,7 @@ df['Customer Segment'] = np.select(seg_cond, seg_choice, "Lost Customers")
 <hr>
 
 ---
+
 
 
 
